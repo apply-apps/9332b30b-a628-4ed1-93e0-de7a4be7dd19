@@ -1,5 +1,6 @@
 // Filename: index.js
 // Combined code from all files
+
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, Button, ScrollView, View, ActivityIndicator, Alert } from 'react-native';
 import axios from 'axios';
@@ -42,18 +43,21 @@ export default function App() {
                     <TextInput
                         style={styles.input}
                         placeholder="Hero"
+                        placeholderTextColor="#AAA"
                         value={hero}
                         onChangeText={setHero}
                     />
                     <TextInput
                         style={styles.input}
                         placeholder="Villain"
+                        placeholderTextColor="#AAA"
                         value={villain}
                         onChangeText={setVillain}
                     />
                     <TextInput
                         style={styles.input}
                         placeholder="Plot"
+                        placeholderTextColor="#AAA"
                         value={plot}
                         onChangeText={setPlot}
                     />
@@ -64,7 +68,7 @@ export default function App() {
                 </View>
                 
                 {loading ? (
-                    <ActivityIndicator size="large" color="#0000ff" />
+                    <ActivityIndicator size="large" color="#FFF" />
                 ) : (
                     <Text style={styles.story}>{story}</Text>
                 )}
@@ -76,7 +80,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#121212', // Dark background color
         paddingTop: 50, // Margin from top to avoid overlapping with status bar
     },
     scrollContent: {
@@ -87,6 +91,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
+        color: '#FFF', // Light text color for dark mode
         marginBottom: 20,
     },
     inputContainer: {
@@ -100,10 +105,12 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 10,
         paddingHorizontal: 10,
+        color: '#FFF', // Light text color for inputs
     },
     story: {
         marginTop: 20,
         fontSize: 16,
+        color: '#FFF', // Light text color for story output
         textAlign: 'justify',
     },
 });
